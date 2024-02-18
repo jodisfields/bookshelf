@@ -1,0 +1,515 @@
+---
+import "../styles/global.css";
+
+const book = [
+  {
+    title: "The Night Circus",
+    author: "Erin Morgenstern",
+    url: "https://www.goodreads.com/book/show/9361589-the-night-circus",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387124618i/9361589.jpg",
+    rating: "4.03/5",
+    summary:
+      "A magical competition between two young illusionists with a touch of romance.",
+  },
+  {
+    title: "Eleanor Oliphant Is Completely Fine",
+    author: "Gail Honeyman",
+    url: "https://www.goodreads.com/book/show/31434883-eleanor-oliphant-is-completely-fine",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1493724347i/31434883.jpg",
+    rating: "4.29/5",
+    summary: "A heartwarming and quirky story about loneliness and friendship.",
+  },
+  {
+    title: "Circe",
+    author: "Madeline Miller",
+    url: "https://www.goodreads.com/book/show/35959740-circe",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565909496i/35959740.jpg",
+    rating: "4.29/5",
+    summary:
+      "A retelling of the life of the Greek goddess Circe, blending mythology with a feminist perspective.",
+  },
+  {
+    title: "The Seven Husbands of Evelyn Hugo",
+    author: "Taylor Jenkins Reid",
+    url: "https://www.goodreads.com/book/show/32620332-the-seven-husbands-of-evelyn-hugo",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1664458703i/32620332.jpg",
+    rating: "4.47/5",
+    summary:
+      "A captivating story of a Hollywood starlet and her seven marriages.",
+  },
+  {
+    title: "Where the Crawdads Sing",
+    author: "Delia Owens",
+    url: "https://www.goodreads.com/book/show/36809135-where-the-crawdads-sing",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582135294i/36809135.jpg",
+    rating: "4.46/5",
+    summary:
+      "A mystery and coming-of-age novel set in the marshes of North Carolina.",
+  },
+  {
+    title: "The Song of Achilles",
+    author: "Madeline Miller",
+    url: "https://www.goodreads.com/book/show/11250317-the-song-of-achilles",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1331154660i/11250317.jpg",
+    rating: "4.38/5",
+    summary:
+      "A retelling of the story of Achilles and Patroclus from Greek mythology.",
+  },
+  {
+    title: "Normal People",
+    author: "Sally Rooney",
+    url: "https://www.goodreads.com/book/show/41057294-normal-people",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1571423190i/41057294.jpg",
+    rating: "3.85/5",
+    summary:
+      "A contemporary love story exploring the complexities of relationships and personal growth.",
+  },
+  {
+    title: "The Invisible Life of Addie LaRue",
+    author: "V. E. Schwab",
+    url: "https://www.goodreads.com/book/show/50623864-the-invisible-life-of-addie-larue",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1584633432i/50623864.jpg",
+    rating: "4.22/5",
+    summary:
+      "A tale of a woman who makes a deal for immortality, only to be forgotten by everyone she meets.",
+  },
+  {
+    title: "The Goldfinch",
+    author: "Donna Tartt",
+    url: "https://www.goodreads.com/book/show/17333223-the-goldfinch",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1378710146i/17333223.jpg",
+    rating: "3.91/5",
+    summary: "A Pulitzer Prize-winning novel about art, loss, and redemption.",
+  },
+  {
+    title: "Anxious People",
+    author: "Fredrik Backman",
+    url: "https://www.goodreads.com/book/show/49127718-anxious-people",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1597575031i/49127718.jpg",
+    rating: "3.99/5",
+    summary:
+      "A humorous and heartfelt story about a group of strangers brought together by a failed bank robbery.",
+  },
+  {
+    title: "Little Fires Everywhere",
+    author: "Celeste Ng",
+    url: "https://www.goodreads.com/book/show/34273236-little-fires-everywhere",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1522684533i/34273236.jpg",
+    rating: "4.08/5",
+    summary:
+      "A novel exploring family dynamics, secrets, and the clash between order and chaos.",
+  },
+  {
+    title: "The Dutch House",
+    author: "Ann Patchett",
+    url: "https://www.goodreads.com/book/show/44318414-the-dutch-house",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1552334367i/44318414.jpg",
+    rating: "4.10/5",
+    summary: "A story of two siblings and the house that shapes their lives.",
+  },
+  {
+    title: "The Book Thief",
+    author: "Markus Zusak",
+    url: "https://www.goodreads.com/book/show/19063.The_Book_Thief",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1522157426i/19063.jpg",
+    rating: "4.37/5",
+    summary: "A historical novel set in Nazi Germany, narrated by Death.",
+  },
+  {
+    title: "The Nightingale",
+    author: "Kristin Hannah",
+    url: "https://www.goodreads.com/book/show/21853621-the-nightingale",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1681839850i/21853621.jpg",
+    rating: "4.57/5",
+    summary: "A tale of two sisters in occupied France during World War II.",
+  },
+  {
+    title: "The Great Alone",
+    author: "Kristin Hannah",
+    url: "https://www.goodreads.com/book/show/34912895-the-great-alone",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1501852423i/34912895.jpg",
+    rating: "4.33/5",
+    summary: "A family's struggle for survival in the Alaskan wilderness.",
+  },
+  {
+    title: "The Hating Game",
+    author: "Sally Thorne",
+    url: "https://www.goodreads.com/book/show/25883848-the-hating-game",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1467138679i/25883848.jpg",
+    rating: "4.06/5",
+    summary: "A witty and romantic story about two office rivals.",
+  },
+  {
+    title: "A Man Called Ove",
+    author: "Fredrik Backman",
+    url: "https://www.goodreads.com/book/show/18774964-a-man-called-ove",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1405259930i/18774964.jpg",
+    rating: "4.36/5",
+    summary:
+      "A heartwarming tale of a grumpy old man who finds unexpected friendship.",
+  },
+  {
+    title: "Educated",
+    author: "Tara Westover",
+    url: "https://www.goodreads.com/book/show/35133922-educated",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1506026635i/35133922.jpg",
+    rating: "4.46/5",
+    summary:
+      "A memoir about a woman's journey from a survivalist upbringing to earning a PhD from Cambridge University.",
+  },
+  {
+    title: "Becoming",
+    author: "Michelle Obama",
+    url: "https://www.goodreads.com/book/show/38746485-becoming",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1528206996i/38746485.jpg",
+    rating: "4.53/5",
+    summary:
+      "The former First Lady's memoir, reflecting on her life and time in the White House.",
+  },
+  {
+    title: "The Light Between Oceans",
+    author: "M. L. Stedman",
+    url: "https://www.goodreads.com/book/show/13158800-the-light-between-oceans",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1336683021i/13158800.jpg",
+    rating: "4.02/5",
+    summary:
+      "A moral dilemma unfolds for a couple living on a remote Australian island.",
+  },
+  {
+    title: "The Rosie Project",
+    author: "Graeme Simsion",
+    url: "https://www.goodreads.com/book/show/16181775-the-rosie-project",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1371651741i/16181775.jpg",
+    rating: "4.01/5",
+    summary:
+      "A romantic comedy about a genetics professor's quest to find the perfect wife.",
+  },
+  {
+    title: "Big Little Lies",
+    author: "Liane Moriarty",
+    url: "https://www.goodreads.com/book/show/19486412-big-little-lies",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1594851437i/19486412.jpg",
+    rating: "4.26/5",
+    summary: "A mystery and drama set in a suburban neighborhood.",
+  },
+  {
+    title: "The Alice Network",
+    author: "Kate Quinn",
+    url: "https://www.goodreads.com/book/show/32051912-the-alice-network",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1492238040i/32051912.jpg",
+    rating: "4.27/5",
+    summary: "A historical novel about female spies in World War I and II.",
+  },
+  {
+    title: "The Giver of Stars",
+    author: "Jojo Moyes",
+    url: "https://www.goodreads.com/book/show/43801204-the-giver-of-stars",
+    image: "https://d15be2nos83ntc.cloudfront.net/images/no-cover.png",
+    rating: "4.28/5",
+    summary:
+      "A story about a group of women who deliver books as part of Eleanor Roosevelt's traveling library.",
+  },
+  {
+    title: "Before We Were Strangers",
+    author: "Renée Carlino",
+    url: "https://www.goodreads.com/book/show/23309634-before-we-were-strangers",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1438012963i/23309634.jpg",
+    rating: "4.25/5",
+    summary: "A second-chance romance that spans fifteen years.",
+  },
+  {
+    title: "The Flatshare",
+    author: "Beth O'Leary",
+    url: "https://www.goodreads.com/book/show/41150287-the-flatshare",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1597355643i/41150287.jpg",
+    rating: "4.13/5",
+    summary: "A unique living arrangement leads to an unexpected romance.",
+  },
+  {
+    title: "The Silent Patient",
+    author: "Alex Michaelides",
+    url: "https://www.goodreads.com/book/show/40097951-the-silent-patient",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668782119i/40097951.jpg",
+    rating: "4.09/5",
+    summary:
+      "A psychological thriller about a woman who stops speaking after her husband's murder.",
+  },
+  {
+    title: "My Sister, the Serial Killer",
+    author: "Oyinkan Braithwaite",
+    url: "https://www.goodreads.com/book/show/38819868-my-sister-the-serial-killer",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1523366732i/38819868.jpg",
+    rating: "3.77/5",
+    summary:
+      "A darkly humorous novel about two sisters, one of whom has a habit of killing her boyfriends.",
+  },
+  {
+    title: "The Wife Between Us",
+    author: "Greer Hendricks and Sarah Pekkanen",
+    url: "https://www.goodreads.com/book/show/34189556-the-wife-between-us",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1496862122i/34189556.jpg",
+    rating: "3.85/5",
+    summary: "A twisty psychological thriller about a complex love triangle.",
+  },
+  {
+    title: "The Lost Apothecary",
+    author: "Sarah Penner",
+    url: "https://www.goodreads.com/book/show/50646695-the-lost-apothecary",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579910665i/50646695.jpg",
+    rating: "3.87/5",
+    summary:
+      "A historical mystery involving an apothecary who dispenses poisons to women seeking vengeance.",
+  },
+  {
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    url: "https://www.goodreads.com/book/show/52578297-the-midnight-library",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
+    rating: "4.08/5",
+    summary: "A thought-provoking story about the choices that make up a life.",
+  },
+  {
+    title: "The House in the Cerulean Sea",
+    author: "TJ Klune",
+    url: "https://www.goodreads.com/book/show/45047384-the-house-in-the-cerulean-sea",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1569514209i/45047384.jpg",
+    rating: "4.47/5",
+    summary:
+      "A heartwarming fantasy about a caseworker assigned to a magical orphanage.",
+  },
+  {
+    title: "The Ex Hex",
+    author: "Erin Sterling",
+    url: "https://www.goodreads.com/book/show/56025591-the-ex-hex",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1606177649i/56025591.jpg",
+    rating: "3.61/5",
+    summary: "A witchy romance with a touch of humor and magic.",
+  },
+  {
+    title: "The Book of Lost Names",
+    author: "Kristin Harmel",
+    url: "https://www.goodreads.com/book/show/50093834-the-book-of-lost-names",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1568318239l/50093834.jpg",
+    rating: "4.18/5",
+    summary:
+      "A historical novel about a woman who forges documents to save children during World War II.",
+  },
+  {
+    title: "Beach Read",
+    author: "Emily Henry",
+    url: "https://www.goodreads.com/book/show/52867387-beach-read",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1589881197i/52867387.jpg",
+    rating: "4.09/5",
+    summary:
+      "A romance between two writers with very different approaches to life and love.",
+  },
+  {
+    title: "The Last Mrs. Parrish",
+    author: "Liv Constantine",
+    url: "https://www.goodreads.com/book/show/34189556-the-last-mrs-parrish",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1496862122i/34189556.jpg",
+    rating: "3.88/5",
+    summary:
+      "A psychological thriller about a woman's plot to infiltrate a wealthy family.",
+  },
+  {
+    title: "The Guest List",
+    author: "Lucy Foley",
+    url: "https://www.goodreads.com/book/show/51933429-the-guest-list",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1580194251i/51933429.jpg",
+    rating: "3.86/5",
+    summary: "A murder mystery set during a wedding on a remote Irish island.",
+  },
+  {
+    title: "The Huntress",
+    author: "Kate Quinn",
+    url: "https://www.goodreads.com/book/show/39863488-the-huntress",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549469559i/39863488.jpg",
+    rating: "4.21/5",
+    summary:
+      "A post-World War II story about a Nazi hunter and a British war correspondent.",
+  },
+  {
+    title: "The Paris Library",
+    author: "Janet Skeslien Charles",
+    url: "https://www.goodreads.com/book/show/50008321-the-paris-library",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1569882383l/50008321.jpg",
+    rating: "4.08/5",
+    summary:
+      "A novel based on the true story of the American Library in Paris during World War II.",
+  },
+  {
+    title: "The Wife Upstairs",
+    author: "Rachel Hawkins",
+    url: "https://www.goodreads.com/book/show/49374439-the-wife-upstairs",
+    image: "None",
+    rating: "3.57/5",
+    summary: "A modern retelling of Jane Eyre with a Southern Gothic twist.",
+  },
+  {
+    title: "One Day in December",
+    author: "Josie Silver",
+    url: "https://www.goodreads.com/book/show/38259130-one-day-in-december",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1547706184i/38259130.jpg",
+    rating: "3.95/5",
+    summary:
+      "A love story that spans a decade, beginning with a missed connection.",
+  },
+  {
+    title: "The Unhoneymooners",
+    author: "Christina Lauren",
+    url: "https://www.goodreads.com/book/show/42201431-the-unhoneymooners",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1548201335i/42201431.jpg",
+    rating: "3.92/5",
+    summary: "A hate-to-love romance that unfolds during a forced honeymoon.",
+  },
+  {
+    title: "The Tattooist of Auschwitz",
+    author: "Heather Morris",
+    url: "https://www.goodreads.com/book/show/35523006-the-tattooist-of-auschwitz",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1498544161i/35523006.jpg",
+    rating: "4.27/5",
+    summary: "A love story set in the Auschwitz-Birkenau concentration camp.",
+  },
+  {
+    title: "The Storied Life of A. J. Fikry",
+    author: "Gabrielle Zevin",
+    url: "https://www.goodreads.com/book/show/18293427-the-storied-life-of-a-j-fikry",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1404582137i/18293427.jpg",
+    rating: "3.99/5",
+    summary:
+      "A heartwarming tale about a bookseller and the transformative power of literature.",
+  },
+  {
+    title: "The Glass Hotel",
+    author: "Emily St. John Mandel",
+    url: "https://www.goodreads.com/book/show/45754981-the-glass-hotel",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1564199892i/45754981.jpg",
+    rating: "3.79/5",
+    summary:
+      "A novel that weaves together the lives of characters connected by a Ponzi scheme.",
+  },
+  {
+    title: "The Sun Down Motel",
+    author: "Simone St. James",
+    url: "https://www.goodreads.com/book/show/45885644-the-sun-down-motel",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570443079i/45885644.jpg",
+    rating: "3.96/5",
+    summary: "A ghostly mystery set in a haunted motel.",
+  },
+  {
+    title: "The Family Upstairs",
+    author: "Lisa Jewell",
+    url: "https://www.goodreads.com/book/show/43822805-the-family-upstairs",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1570968363i/43822805.jpg",
+    rating: "3.95/5",
+    summary:
+      "A suspenseful story about the dark secrets of a seemingly perfect family.",
+  },
+  {
+    title: "The Vanishing Half",
+    author: "Brit Bennett",
+    url: "https://www.goodreads.com/book/show/51791252-the-vanishing-half",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1577090827l/51791252.jpg",
+    rating: "4.24/5",
+    summary:
+      "A multi-generational story about twin sisters who choose to live in two very different worlds.",
+  },
+  {
+    title: "The Starless Sea",
+    author: "Erin Morgenstern",
+    url: "https://www.goodreads.com/book/show/43575115-the-starless-sea",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1617715077i/43575115.jpg",
+    rating: "3.87/5",
+    summary: "A fantastical journey through a hidden underground world.",
+  },
+  {
+    title: "The People We Meet on Vacation",
+    author: "Emily Henry",
+    url: "https://www.goodreads.com/book/show/54985743-people-we-meet-on-vacation",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1618913179i/54985743.jpg",
+    rating: "4.05/5",
+    summary: "A friends-to-lovers romance with a travel theme.",
+  },
+];
+---
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lara's Bookshelf</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lara's Bookshelf</h1>
+      <div class="book-grid">
+        {
+          book.map((book, index) => (
+            <a href={book.url} class="book-card" id={`book-card-${index}`} target="_blank">
+              <div class="book-cover-wrapper">
+                <img src={book.image} alt={book.title} class="book-cover" />
+                <div class="summary">{book.summary}</div>
+              </div>
+              <div class="book-info">
+                <h2>{book.title}</h2>
+                <p class="author">Author: {book.author}</p>
+                <p class="rating">Rating: {book.rating}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </body>
+</html>
